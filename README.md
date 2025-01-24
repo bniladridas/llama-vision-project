@@ -120,6 +120,43 @@ docker compose down
 docker compose up --build
 ```
 
+## Diagrams
+
+### Docker Compose Services
+
+```mermaid
+graph TD
+    A[Frontend] -->|Depends on| B[Backend]
+    B -->|Depends on| C[Llama]
+    C -->|Uses| D[NVIDIA GPU]
+```
+
+### Backend Service
+
+```mermaid
+graph TD
+    A[Client] -->|Upload Image| B[FastAPI Backend]
+    B -->|Save Image| C[Local Storage]
+    A -->|Analyze Image| B
+    B -->|Send Image URL and Prompt| D[Llama API]
+    D -->|Return Analysis| B
+    B -->|Return Result| A
+```
+
+### Frontend Application
+
+```mermaid
+graph TD
+    A[User] -->|Upload Image| B[React Frontend]
+    B -->|Send Image| C[FastAPI Backend]
+    C -->|Save Image| D[Local Storage]
+    B -->|Send Analysis Request| C
+    C -->|Send Image URL and Prompt| E[Llama API]
+    E -->|Return Analysis| C
+    C -->|Return Result| B
+    B -->|Display Result| A
+```
+
 ## Current State
 
 The project is set up to analyze images using a pre-trained model. The backend service handles image uploads and analysis requests, while the frontend provides a user interface for uploading images and displaying analysis results. The project is containerized using Docker and managed with Docker Compose.
