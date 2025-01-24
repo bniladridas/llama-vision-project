@@ -1,0 +1,37 @@
+services:
+  llama:
+    image: nvcr.io/nim/meta/llama-3.2-90b-vision-instruct:latest
+    environment:
+      - NGC_API_KEY=${NGC_API_KEY}
+    volumes:
+      - ${LOCAL_NIM_CACHE:-~/.cache/nim}:/opt/nim/.cache
+    ports:
+      - "8000:8000"
+    shm_size: '16gb'
+
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./backend/uploads:/app/uploads
+    depends_on:
+      - llama
+    environment:
+      - LLAMA_API_URL=http://llama:8000/v1/chat/completions
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_BACKEND_URL=http://localhost:8001
