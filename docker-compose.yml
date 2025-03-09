@@ -21,6 +21,7 @@ services:
       - llama
     environment:
       - LLAMA_API_URL=http://llama:8000/v1/chat/completions
+      - IMAGE_ANALYSIS_API_URL=http://image-analysis:8002/v1/analyze
 
   frontend:
     build:
@@ -35,3 +36,9 @@ services:
     environment:
       - NODE_ENV=development
       - REACT_APP_BACKEND_URL=http://localhost:8001
+      - REACT_APP_IMAGE_ANALYSIS_API_URL=http://localhost:8002
+
+  image-analysis:
+    image: image-analysis-api:latest
+    ports:
+      - "8002:8002"

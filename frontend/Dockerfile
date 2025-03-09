@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:14-alpine
 
 WORKDIR /app
 
@@ -16,6 +16,9 @@ RUN npm run build
 
 # Install serve to run the application
 RUN npm install -g serve
+
+# Set environment variable for image analysis API URL
+ENV REACT_APP_IMAGE_ANALYSIS_API_URL=http://localhost:8002
 
 # Start the application
 CMD ["serve", "-s", "build", "-l", "3000"]
