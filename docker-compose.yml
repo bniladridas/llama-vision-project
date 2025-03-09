@@ -10,9 +10,7 @@ services:
     shm_size: '16gb'
 
   backend:
-    build: 
-      context: ./backend
-      dockerfile: Dockerfile
+    image: <username>/backend:latest
     ports:
       - "8001:8001"
     volumes:
@@ -24,9 +22,7 @@ services:
       - IMAGE_ANALYSIS_API_URL=http://image-analysis:8002/v1/analyze
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: <username>/frontend:latest
     ports:
       - "3000:3000"
     depends_on:

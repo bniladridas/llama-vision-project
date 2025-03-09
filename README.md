@@ -210,3 +210,40 @@ git checkout -b feature/metal-enhancement
 
 ## License
 NVIDIA AI Enterprise License (Linux) / MIT License (macOS Components)
+
+---
+
+## Docker Hub Instructions
+
+### Building Docker Images
+1. Build the backend Docker image:
+   ```bash
+   docker build -t <username>/backend:latest ./backend
+   ```
+
+2. Build the frontend Docker image:
+   ```bash
+   docker build -t <username>/frontend:latest ./frontend
+   ```
+
+### Tagging Docker Images
+1. Tag the backend Docker image:
+   ```bash
+   docker tag <username>/backend:latest <username>/backend:latest
+   ```
+
+2. Tag the frontend Docker image:
+   ```bash
+   docker tag <username>/frontend:latest <username>/frontend:latest
+   ```
+
+### Pushing Docker Images to Docker Hub
+1. Push the backend Docker image:
+   ```bash
+   docker push <username>/backend:latest
+   ```
+
+2. Push the frontend Docker image:
+   ```bash
+   docker push <username>/frontend:latest
+   ```
