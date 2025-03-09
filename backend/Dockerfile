@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 WORKDIR /app
 
@@ -6,5 +6,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
+
+ENV IMAGE_ANALYSIS_API_URL=http://localhost:8000/v1/image-analysis
 
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8001"]

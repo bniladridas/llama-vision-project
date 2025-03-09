@@ -43,7 +43,7 @@ function App() {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:8001/api/analyze', {
+      const response = await fetch('http://localhost:8001/api/image-analysis', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

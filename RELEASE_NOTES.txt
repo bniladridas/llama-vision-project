@@ -1,0 +1,42 @@
+# Release Notes
+
+## Version 1.0.0
+
+### New Features and Changes
+- Added a new endpoint to handle image analysis requests in `backend/app.py`.
+- Updated the existing `/api/analyze` endpoint to use the new image analysis function.
+- Added error handling for the new image analysis function.
+- Updated the base image in `backend/Dockerfile` to use Python 3.10.
+- Added a new environment variable for the image analysis API URL in `backend/Dockerfile`.
+- Updated the `fastapi` dependency to version 0.65.2 in `backend/requirements.txt`.
+- Added a new dependency for the image analysis library in `backend/requirements.txt`.
+- Added a new service for the image analysis API in `docker-compose.yml`.
+- Updated the backend service to use the new image analysis API URL in `docker-compose.yml`.
+- Updated the base image in `frontend/Dockerfile` to use Node.js 14.
+- Added a new environment variable for the image analysis API URL in `frontend/Dockerfile`.
+- Updated the `axios` dependency to version 0.21.1 in `frontend/package.json`.
+- Added a new dependency for the image analysis library in `frontend/package.json`.
+- Added a new function to handle image analysis requests in `frontend/src/App.js`.
+- Updated the existing `analyzeImage` function to use the new image analysis function in `frontend/src/App.js`.
+- Added error handling for the new image analysis function in `frontend/src/App.js`.
+
+### Updated Dependencies
+- `fastapi` updated to version 0.65.2
+- `axios` updated to version 0.21.1
+- Added `image-analysis-library` version 1.0.0
+
+### Setup and Running Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/bniladridas/llama-vision-project.git
+   cd llama-vision-project
+   ```
+
+2. Build and start the services using Docker Compose:
+   ```bash
+   docker-compose up --build
+   ```
+
+3. Access the frontend at `http://localhost:3000` and the backend API at `http://localhost:8001`.
+
+4. For image analysis, upload an image using the frontend and provide a prompt for analysis.
