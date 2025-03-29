@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llama Vision Project Overview</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffffff 0%, #e6f2ff 50%, #cce5ff 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        h1 {
+            color: #0066cc;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        h2 {
+            color: #0066cc;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            color: #004d99;
+            text-decoration: underline;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        strong {
+            color: #004d99;
+        }
+        code {
+            background-color: rgba(0, 102, 204, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #0066cc;
+        }
+        footer {
+            text-align: center;
+            margin: 40px auto;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .project-tagline {
+            font-size: 1.2rem;
+            color: #0066cc;
+            font-weight: 500;
+        }
+        .feature-box {
+            background: rgba(255, 255, 255, 0.7);
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Llama Vision Project</h1>
+        <p class="project-tagline">An Image Analysis Application by Niladri Das</p>
+    </header>
+    <main>
+        <h2>About the Project</h2>
+        <p>The Llama Vision Project is an innovative application designed for analyzing images. Developed by Niladri Das, it combines a powerful backend with a user-friendly frontend to provide a seamless experience for image processing and visualization.</p>
+
+        <h2>Technology Stack</h2>
+        <div class="feature-box">
+            <ul>
+                <li><strong>Backend</strong>: Built with <a href="https://fastapi.tiangolo.com/" target="_blank">FastAPI</a>, a high-performance Python framework, serving as a platform-aware inference server.</li>
+                <li><strong>Frontend</strong>: Developed using <a href="https://reactjs.org/" target="_blank">React</a>, offering a visualization dashboard for user interaction.</li>
+            </ul>
+        </div>
+
+        <h2>Features</h2>
+        <div class="feature-box">
+            <p>The project supports flexible deployment with:</p>
+            <ul>
+                <li><strong>Docker</strong>: Includes a <code>Dockerfile</code> and <code>docker-compose.yml</code> for hybrid CPU/GPU setups [<a href="https://github.com/bniladridas/llama-vision-project/blob/main/Dockerfile" target="_blank">Dockerfile</a>].</li>
+                <li><strong>Hardware Adaptability</strong>: Optimizes for NVIDIA GPUs or Apple Silicon (via Metal) with conditional model loading.</li>
+                <li><strong>Model</strong>: Likely integrates the "llama-3.2-90b-vision" model for image reasoning tasks.</li>
+            </ul>
+        </div>
+
+        <h2>Get Involved</h2>
+        <p>Interested in contributing? Check out the repository for branches like <code>feature/nvidia-optimization</code> and <code>feature/metal-enhancement</code>. Visit the project on GitHub: <a href="https://github.com/bniladridas/llama-vision-project" target="_blank">Llama Vision Project</a>.</p>
+
+        <h2>Learn More</h2>
+        <p>For deployment instructions and source code, explore the official repository: <a href="https://github.com/bniladridas/llama-vision-project" target="_blank">github.com/bniladridas/llama-vision-project</a>.</p>
+    </main>
+    <footer>
+        <p>Content sourced from <a href="https://github.com/bniladridas/llama-vision-project" target="_blank">GitHub</a> on March 29, 2025. Created by Niladri Das.</p>
+    </footer>
+</body>
+</html>
